@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-17",
+ "updated": "2026-11-17 23:58 ECT",
+ "btc_vs_ma200": -0.1085,
+ "bot_return": -0.0,
+ "bot_drawdown": 0.0,
+ "top5": [
+  {
+   "symbol": "TRX",
+   "ret20": -0.0658
+  },
+  {
+   "symbol": "AAVE",
+   "ret20": -0.1594
+  },
+  {
+   "symbol": "AVAX",
+   "ret20": -0.1895
+  },
+  {
+   "symbol": "BTC",
+   "ret20": -0.2016
+  },
+  {
+   "symbol": "LINK",
+   "ret20": -0.2108
+  }
+ ],
+ "breakouts": [],
+ "breakdowns": [],
+ "closed_trades": 0,
+ "disclaimer": "Información educativa, no asesoría de inversión."
+}
