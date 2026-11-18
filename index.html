@@ -19,6 +19,14 @@ th{color:var(--muted);font-weight:500}.scroll{overflow-x:auto}
 .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-weight:600}
 footer{color:var(--muted);font-size:.85rem;margin-top:28px;border-top:1px solid var(--line);padding-top:14px}
 ul{margin:0;padding-left:20px}
+:root{--sim:#b25d00;--shadow:#6b6b70;--real:#1a7f45}
+@media (prefers-color-scheme:dark){:root{--sim:#ffb35c;--shadow:#a6a6ad;--real:#4cc38a}}
+h2.section{font-size:1.4rem;margin:30px 0 10px}
+.hist{border-left-width:5px}.shadowc{border-left-color:var(--shadow)}.simc{border-left-color:var(--sim)}.realc{border-left-color:var(--real)}
+.tag{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;padding:2px 8px;border-radius:6px}
+.tshadow{background:color-mix(in srgb,var(--shadow) 18%,transparent);color:var(--shadow)}
+.tsim{background:color-mix(in srgb,var(--sim) 18%,transparent);color:var(--sim)}
+.treal{background:color-mix(in srgb,var(--real) 18%,transparent);color:var(--real)}
 </style></head><body><main>
 <h1>📡 Radar VIGÍA</h1>
 <p class="lead">Un bot cripto real que publica sus resultados cada día, <strong>pérdidas incluidas</strong>. Datos del cierre diario del 2026-11-17.</p>
@@ -41,10 +49,6 @@ El bot no abre operaciones nuevas mientras siga así.</p></div>
 <div class="card"><h2>Top 5 por fuerza (últimos 20 días)</h2><div class="scroll"><table>
 <tr><th>#</th><th>Cripto</th><th>20 días</th><th>Ayer</th></tr><tr><td>1</td><td>TRX</td><td class='neg'>-6.6%</td><td class='pos'>+1.0%</td></tr><tr><td>2</td><td>AAVE</td><td class='neg'>-15.9%</td><td class='pos'>+3.9%</td></tr><tr><td>3</td><td>AVAX</td><td class='neg'>-19.0%</td><td class='pos'>+2.5%</td></tr><tr><td>4</td><td>BTC</td><td class='neg'>-20.2%</td><td class='pos'>+0.1%</td></tr><tr><td>5</td><td>LINK</td><td class='neg'>-21.1%</td><td class='pos'>+2.0%</td></tr></table></div></div>
 
-<div class="card"><h2>Operaciones cerradas del bot</h2><div class="scroll"><table>
-<tr><th>Señal</th><th>Cripto</th><th>Resultado</th><th>Salida</th></tr><tr><td colspan='4' class='muted'>Todavía no hay operaciones cerradas.</td></tr></table></div>
-<p class="muted" style="margin:8px 0 0">R = resultado medido en unidades de riesgo. −1R es la pérdida planificada de una operación.</p></div>
-
 <div class="card"><h2>Historial de señales publicadas (30 días)</h2><div class="scroll"><table>
 <tr><th>Día</th><th>Cripto</th><th>Tipo</th><th>Desde la señal</th></tr><tr><td colspan='4' class='muted'>Sin señales registradas en los últimos 30 días.</td></tr></table></div></div>
 
@@ -56,8 +60,40 @@ El bot no abre operaciones nuevas mientras siga así.</p></div>
 <li>Se pausa solo si cae 20 % desde su máximo o si pierde de forma sostenida.</li>
 </ul></div>
 
+
+<h2 class="section">Historia</h2>
+<p class="muted" style="margin:-6px 0 14px">Tres bloques separados a propósito: un sistema anterior, una simulación y los resultados reales. No se suman ni se comparan como si fueran lo mismo.</p>
+
+<div class="card hist shadowc"><span class="tag tshadow">1 · Sistema anterior (Shadow) · otra estrategia</span>
+<h2 style="margin-top:10px">Lo que evitó el sistema anterior (Shadow, desde sep-2026)</h2>
+<p>Entre el 2026-09-20 y el 2026-11-17, el sistema anterior (BREAKOUT_V1 en velas de 4h sobre BTC, BNB, SOL y AVAX) registró
+<strong>1.396</strong> decisiones: <strong>1.394</strong> de "no operar" y <strong>2</strong> marcadas para revisión.
+No abrió ninguna operación.</p>
+<p>En ese mismo periodo, BTC pasó de 81.178 a 64.947 USDT (<span class="neg">-20.0%</span>),
+con un mínimo -23.6% bajo el punto de partida.</p>
+<ul><li>SOL el 2026-09-25: quedó solo en revisión; desde entonces <span class='neg'>-38.4%</span>.</li><li>BTC el 2026-10-02: quedó solo en revisión; desde entonces <span class='neg'>-23.2%</span>.</li></ul>
+<p class="muted" style="margin-top:8px">Era otra estrategia, que ya no opera. Quedarse fuera evitó esa caída, pero también se habría perdido cualquier subida: no es una prueba de que el sistema actual funcione.</p></div>
+
+<div class="card hist simc"><span class="tag tsim">2 · Simulación (backtest) · no son resultados reales</span>
+<h2 style="margin-top:10px">Simulación Donchian 2020–2026</h2>
+<svg viewBox='0 0 800 220' role='img' aria-label='Curva simulada (backtest) 2020-2026' style='width:100%;height:auto;color:var(--muted)'><line x1='36' x2='764' y1='182.9' y2='182.9' stroke='currentColor' stroke-dasharray='4 4' opacity='.5'/><text x='36' y='176.9' font-size='12' fill='currentColor' opacity='.7'>inicio = 100</text><polyline points='36.0,182.9 44.8,182.2 53.5,183.5 62.3,183.5 71.1,184.0 79.9,182.1 88.6,183.1 97.4,165.9 106.2,160.5 114.9,171.4 123.7,169.9 132.5,159.6 141.3,144.2 150.0,130.4 158.8,90.0 167.6,89.6 176.3,71.1 185.1,76.5 193.9,76.5 202.7,76.5 211.4,62.9 220.2,71.1 229.0,70.2 237.7,70.4 246.5,76.0 255.3,77.9 264.0,77.9 272.8,77.9 281.6,77.9 290.4,77.9 299.1,77.9 307.9,77.9 316.7,77.9 325.4,77.9 334.2,77.9 343.0,77.9 351.8,77.9 360.5,71.3 369.3,76.0 378.1,76.7 386.8,77.5 395.6,76.7 404.4,78.8 413.2,80.1 421.9,82.5 430.7,82.5 439.5,73.9 448.2,66.9 457.0,52.7 465.8,59.7 474.6,52.0 483.3,48.5 492.1,52.0 500.9,47.5 509.6,51.9 518.4,51.4 527.2,57.0 536.0,57.9 544.7,58.5 553.5,40.6 562.3,46.9 571.0,49.4 579.8,50.5 588.6,54.1 597.3,52.3 606.1,51.5 614.9,54.9 623.7,51.4 632.4,52.3 641.2,53.1 650.0,51.3 658.7,52.5 667.5,52.5 676.3,52.5 685.1,52.5 693.8,52.5 702.6,52.5 711.4,52.5 720.1,52.5 728.9,52.5 737.7,45.3 746.5,36.0 755.2,39.8 764.0,39.8' fill='none' stroke='var(--sim)' stroke-width='2'/><text x='36' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2020</text><text x='141' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2021</text><text x='247' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2022</text><text x='352' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2023</text><text x='457' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2024</text><text x='562' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2025</text><text x='668' y='210' font-size='12' fill='currentColor' opacity='.6' text-anchor='middle'>2026</text><text x='764' y='24' font-size='12' fill='var(--sim)' text-anchor='end'>SIMULACIÓN · escala logarítmica</text></svg>
+<div class="scroll"><table>
+<tr><th>Backtest</th><th>Trades</th><th>PF</th><th>PF sin 3 mejores</th><th>Crec. anual</th><th>Caída máx.</th></tr>
+<tr><td>2020 → hoy</td><td>196</td><td>3.248</td><td>2.146</td><td>+24.1%</td><td>+21.3%</td></tr>
+<tr><td>2025 → hoy</td><td>51</td><td>1.344</td><td>0.598</td><td>+3.5%</td><td>+10.9%</td></tr>
+<tr><td class="muted">Comprar y mantener BTC 2020 → hoy</td><td>-</td><td>-</td><td>-</td><td>+37.6%</td><td>+76.6%</td></tr>
+</table></div>
+<p class="muted" style="margin-top:8px"><strong>Es una simulación.</strong> Donchian 20/10, stop 3×ATR topado al 19 %, riesgo 1 %, máx. 5 posiciones, BTC sobre su media de 200 días, top 15 por volumen de un pool de 20 pares; comisión 0.1 % + deslizamiento 0.05 % por lado. Simulación con datos históricos. El pool se eligió con el volumen actual (sesgo de supervivencia) y no incluye mínimos de Binance ni errores de ejecución. No garantiza resultados futuros.
+Desde 2025 el resultado depende de pocas operaciones: sin las 3 mejores, el PF queda por debajo de 1.</p></div>
+
+<div class="card hist realc"><span class="tag treal">3 · Resultados reales · desde el 2026-11-18</span>
+<h2 style="margin-top:10px">Resultados reales</h2><div class='kpi flat'>0.0%</div><p class='muted' style='margin:4px 0 8px'>desde el 2026-11-18 · caída desde máximo 0.0% · 0 cerradas (0 ganadoras, 0 perdedoras)</p><p class='muted'>Todavía no hay operaciones cerradas. El bot solo entra con BTC sobre su media de 200 días.</p>
+<p class="muted" style="margin-top:8px">Dinero real, en Spot, con la configuración de la simulación. Aquí solo cuenta lo que ocurre desde el 2026-11-18.
+R = resultado en unidades de riesgo; −1R es la pérdida planificada de una operación.</p></div>
+
+
 <p><a class="cta" href="https://t.me/radarvigia">Seguir el radar diario en Telegram</a></p>
 
 <footer>Información educativa, no asesoría de inversión. Rentabilidades pasadas no garantizan resultados futuros.
-Las criptomonedas pueden perder gran parte de su valor.<br>Actualizado: 2026-11-17 23:58 ECT · vigia-web-v1.0.0</footer>
+Las criptomonedas pueden perder gran parte de su valor.<br>Actualizado: 2026-11-18 00:15 ECT · vigia-web-v1.1.0</footer>
 </main></body></html>
