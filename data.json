@@ -1,49 +1,33 @@
 {
- "date": "2026-11-20",
- "updated": "2026-11-21 08:05 ECT",
- "btc_vs_ma200": -0.1879,
+ "date": "2026-11-21",
+ "updated": "2026-11-22 08:05 ECT",
+ "btc_vs_ma200": -0.1693,
  "bot_return": -0.0,
  "bot_drawdown": 0.0,
  "top5": [
   {
    "symbol": "TRX",
-   "ret20": -0.0053
-  },
-  {
-   "symbol": "BNB",
-   "ret20": -0.2317
+   "ret20": -0.0249
   },
   {
    "symbol": "TAO",
-   "ret20": -0.2366
+   "ret20": -0.2031
   },
   {
-   "symbol": "AVAX",
-   "ret20": -0.2399
+   "symbol": "BNB",
+   "ret20": -0.2302
   },
   {
    "symbol": "BTC",
-   "ret20": -0.2401
+   "ret20": -0.2315
+  },
+  {
+   "symbol": "AVAX",
+   "ret20": -0.243
   }
  ],
  "breakouts": [],
- "breakdowns": [
-  "BTC",
-  "ETH",
-  "ZEC",
-  "BNB",
-  "NEAR",
-  "PEPE",
-  "UNI",
-  "DOGE",
-  "ENA",
-  "TRX",
-  "SUI",
-  "WLD",
-  "LINK",
-  "AVAX",
-  "LTC"
- ],
+ "breakdowns": [],
  "closed_trades": 0,
  "disclaimer": "Información educativa, no asesoría de inversión."
 }
